@@ -1,4 +1,4 @@
-//video:
+//video: https://youtu.be/aJvUGnnikpE
 //obra utilizada: "Late Morning 1" de Bridget Riley.
 
 /*
@@ -8,13 +8,20 @@ para interactuar, empezar con el cursor del lado
  
  (cliquear en el lienzo antes de presionar las teclas)
  
- mantené presionado "p" para el party mode
- presioná f para el party mode del fondo
- presioná r para resetear el valor del fondo
+ - mantené presionado "p" para el party mode
+ - presioná "f" para cambiar el color del fondo
+ - presioná "r" para resetear el valor del fondo
  */
- 
+
 //la obra
 PImage obra;
+
+//valores fondo
+int bg = 0;
+color bg0 = color(240, 236, 220);
+color bg1 = color(227, 229, 213);
+color bg2 = color(114, 102, 116);
+color bg3 = color(188, 206, 183);
 
 void setup() {
   size(800, 400);
@@ -22,14 +29,8 @@ void setup() {
 }
 
 void draw() {
-    color partyMode2 = color(random(200), random(200), random(200));
-  color beige = color(218, 219, 212);
-    if (keyPressed) {
-    if (key == 'f' && beige == color(218, 219, 212) ) {
-      beige = partyMode2;
-    }
-  }
-  background(beige);
+
+  background(bg);
   obra.resize(400, 400);
   image(obra, 0, 0);
 
@@ -86,12 +87,10 @@ void draw() {
   color celeste = color(96, 162, 170);
   color rojo = color(232, 94, 94);
   color partyMode = color(random(255), random(255), random(255));
-
+  color partyMode2 = color(random(200), random(200), random(200));
   //
 
   //interacciones
-
-
   //rayas celestes
   if (keyPressed) {
     if (key == 'p' && celeste == color(96, 162, 170)) {
@@ -192,6 +191,32 @@ void draw() {
       if (key == 'p' && rojo == color(232, 94, 94)) {
         rojo = partyMode2;
       }
+    }
+  }
+
+
+  //interacciones fondo
+  if (keyPressed) {
+    if (key == 'f') {
+      bg = bg+1;
+      if (bg == 1) {
+        bg = bg0;
+        if (bg == 2) {
+          bg = bg1;
+          if (bg == 3) {
+            bg = bg2;
+            if (bg == 4) {
+              bg = bg3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (keyPressed) {
+    if (key == 'r' && bg > 0) {
+      bg = 0;
     }
   }
 }

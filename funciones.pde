@@ -9,8 +9,7 @@ void rayasCelestes12(int posInicial1C, int largoLinea1C, int mouseX, color celes
           }
         }
   for (float fila1c = 1; fila1c <= cant1c; fila1c++) {
-    for (float fila2c = 4.5; fila2c <=cant2c; fila2c++) {
-          
+    for (float fila2c = 4.5; fila2c <=cant2c; fila2c++) {     
       if (mouseX > posInicial1C + largoLinea1C) {
         if (mouseX > posInicial1C + largoLinea1C * 2) {
           line(posInicial1C, (fila1c*27)+93, posInicial1C + largoLinea1C, fila1c*27);
