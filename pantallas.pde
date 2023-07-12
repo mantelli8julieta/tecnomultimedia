@@ -1,28 +1,20 @@
-boolean decisión(boolean decisión) {
-  return decisión;
-}
-
-boolean reset(boolean reset) {
-  return reset;
-}
-
 // funciones para los cuadros
-void cuadroTextoContinuar(color cuadroTextoC, color textoBlanco, color boton2, String texto) {
-  fill(cuadroTextoC);
+void cuadroTextoContinuar(color boton2) {
+  fill(15);
   //rec grande
   rect(0, 440, 600, 200);
   fill(boton2);
   //rec boton
   rect(452, 550, 137, 33);
-  fill(textoBlanco);
+  fill(255);
   textSize(25);
   text("continuar", 462, 574);
   triangle(566, 558, 566, 578, 581, 568);
-  text(texto, 10, 465);
+ 
 }
 
 void cuadroTextoDecisión() {
-  fill(cuadroTextoC);
+  fill(15);
   rect(0, 440, 600, 200);
   fill(boton2);
   //decisión a
@@ -32,7 +24,7 @@ void cuadroTextoDecisión() {
 }
 
 void cuadroTextoFin() {
-  fill(cuadroTextoC);
+  fill(15);
   rect(0, 440, 600, 200);
   fill(255);
   rect(270, 560, 100, 30);
@@ -43,14 +35,13 @@ void cuadroTextoFin() {
 //
 
 //pantallas iniciales
-void misPantallas(color textoBlanco, color boton1, color boton2) {
+void misPantallas( color boton1, color boton2) {
   //menú//
   if (pantalla == 0) {
-    decisión = true;
     reset = false;
     image(fondos[0], 0, 0, 600, 600);
     textFont(títulos);
-    fill(textoBlanco);
+    fill(255);
     textSize(32);
     text("El extraño caso del \n Dr. Jekyll y el Sr. Hyde", 292, 125);
     fill(boton1);
@@ -65,7 +56,6 @@ void misPantallas(color textoBlanco, color boton1, color boton2) {
 
   //créditos//
   if (pantalla == 1) {
-    decisión = true;
     reset = false;
     image(fondos[1], 0, 0, 600, 600);
     fill(18);
@@ -74,7 +64,7 @@ void misPantallas(color textoBlanco, color boton1, color boton2) {
     textSize(40);
     text("CRÉDITOS", 220, 90);
     textSize(27);
-    text("Portada:                                     Mantelli Julieta", 40, 175);
+    text("Portada:                     Mantelli Julieta (94730/3)", 40, 175);
     text("Fondos:                         de Google, editados por \n                                                  Mantelli Julieta", 40, 230);
     text("Programación:                             Mantelli Julieta", 40, 310);
     text("Obra: El extraño caso del Dr. Jekyll y el Sr. Hyde \nde Robert Louis Stevenson", 40, 370);
@@ -86,93 +76,83 @@ void misPantallas(color textoBlanco, color boton1, color boton2) {
 
   //pantallas aventura//
   if (pantalla == 2) {
-    decisión = false;
-     reset = false;
+    reset = false;
     image(fondos[2], 0, 0, 600, 440);
     fill(25);
     noStroke();
-    cuadroTextoContinuar(cuadroTextoC, textoBlanco, boton2, textojuego[0]);
+    cuadroTextoContinuar(boton2);
+    text("ej2", 10, 465);
   }
 
   if (pantalla == 3) {
-    decisión = true;
-     reset = false;
+    reset = false;
     image(fondos[3], 0, 0, 600, 440);
     cuadroTextoDecisión();
-    fill(textoBlanco);
+    fill(255);
     text("ejemplo3", 10, 465);
   }
 
   if (pantalla == 4) {
-    decisión = false;
-     reset = false;
+    reset = false;
     image(fondos[4], 0, 0, 600, 440);
-   // cuadroTextoContinuar(cuadroTextoC, textoBlanco, boton2);
-    fill(textoBlanco);
-    text("ejemplo4", 10, 465);
+    cuadroTextoContinuar( boton2);
+    fill(255);
+    text("ej4", 10, 465);
   }
   if (pantalla == 5) {
-    decisión = false;
     reset = false;
     image(fondos[5], 0, 0, 600, 440);
-  //  cuadroTextoContinuar(cuadroTextoC, textoBlanco, boton2);
-    fill(textoBlanco);
-    text("ejemplo5", 10, 465);
+    cuadroTextoContinuar(boton2);
+    fill(255);
+    text("ej5", 10, 465);
   }
   if (pantalla == 6) {
-    decisión = false;
     reset = true;
     image(fondos[6], 0, 0, 600, 440);
     cuadroTextoFin();
-    fill(textoBlanco);
-    text("ejemplo6", 10, 465);
+    fill(255);
+    text("ej6", 10, 465);
   }
   if (pantalla == 7) {
-    decisión = false;
-     reset = false;
+    reset = false;
     image(fondos[7], 0, 0, 600, 440);
-  //  cuadroTextoContinuar(cuadroTextoC, textoBlanco, boton2);
-    fill(textoBlanco);
-    text("ejemplo7", 10, 465);
+    cuadroTextoContinuar(boton2);
+    fill(255);
+    text("ej7", 10, 465);
   }
   if (pantalla == 8) {
-    decisión = true;
-     reset = false;
+    reset = false;
     image(fondos[8], 0, 0, 600, 440);
     cuadroTextoDecisión();
-    fill(textoBlanco);
+    fill(255);
     text("ejemplo8", 10, 465);
   }
   if (pantalla == 9) {
-    decisión = false;
-     reset = false;
+    reset = false;
     image(fondos[9], 0, 0, 600, 440);
-  //  cuadroTextoContinuar(cuadroTextoC, textoBlanco, boton2);
-    fill(textoBlanco);
-    text("ejemplo9", 10, 465);
+    cuadroTextoContinuar(boton2);
+    fill(255);
+    text("ej9", 10, 465);
   }
   if (pantalla == 10) {
-    decisión = false;
     reset = true;
     image(fondos[10], 0, 0, 600, 440);
     cuadroTextoFin();
-    fill(textoBlanco);
+    fill(255);
     text("ejemplo10", 10, 465);
   }
   if (pantalla == 11) {
-    decisión = false;
-     reset = false;
+    reset = false;
     image(fondos[11], 0, 0, 600, 440);
-   // cuadroTextoContinuar(cuadroTextoC, textoBlanco, boton2);
-    fill(textoBlanco);
-    text("ejemplo11", 10, 465);
+    cuadroTextoContinuar(boton2);
+    fill(255);
+    text("ej11", 10, 465);
   }
   if (pantalla == 12) {
-   decisión = false;
     reset = true;
     image(fondos[12], 0, 0, 600, 440);
     cuadroTextoFin();
-    fill(textoBlanco);
+    fill(255);
     text("ejemplo12", 10, 465);
   }
 }
