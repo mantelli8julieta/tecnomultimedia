@@ -3,12 +3,8 @@
 
 //variables
 int cant = 13;
-int cant2 = 19;
 PFont títulos;
 int pantalla = 0;
-
-//para resetear el juego al alcanzar un final
-boolean reset = false;
 
 //colores de botones y texto
 color boton1 = color(215);
@@ -31,7 +27,6 @@ void draw () {
   println("x:" + mouseX);
   println("y:" + mouseY);
   println("pantalla " + pantalla);
-  println("reset es " + reset);
 
   misPantallas(boton1, boton2);
 }
