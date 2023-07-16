@@ -1,5 +1,5 @@
-//video:
-//obra elegida: "El extraño caso del Dr. Jekyll y el Sr. Hyde" de Robert Louis Stevenson
+//video: https://youtu.be/qkk8KbhyhtQ
+//obra elegida: "El extraño caso del Dr. Jekyll y el Sr. Hyde" de Robert Louis Stevenson.
 
 //variables
 int cant = 14;

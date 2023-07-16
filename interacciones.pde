@@ -41,22 +41,11 @@ void misInteracciones(int mouseX, int mouseY) {
   } else if (pantalla==5 && mouseX > 452 && mouseX < 575 && mouseY > 543 && mouseY < 576) {
     pantalla = 6;
   }
-
   if (pantalla==7 && mouseX > 452 && mouseX < 575 && mouseY > 543 && mouseY < 576) {
     pantalla = 8;
   } else if (pantalla==8 && mouseX > 452 && mouseX < 575 && mouseY > 543 && mouseY < 576) {
     pantalla = 9;
   }
-
-  //decisiones pantalla 8
-  // if (pantalla == 8) {
-  // if (mouseX > 180 && mouseX < 280 && mouseY > 560 && mouseY < 590) {
-  //  pantalla = 9;
-  // }
-  //if (mouseX > 300 && mouseX < 400 && mouseY > 560 && mouseY < 590) {
-  // pantalla = 11;
-  //}
-  //}
 
   if (pantalla == 9) {
     if (mouseX > 180 && mouseX < 280 && mouseY > 560 && mouseY < 590) {
