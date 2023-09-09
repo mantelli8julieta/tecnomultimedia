@@ -7,42 +7,40 @@ function balaAliens() {
   image('data/balaAliens.png');
 }
 
+
+// dibujar nave/jugador //
+function drawNave() {
+  image(nave, naveX, naveY);
+}
+
+
 // dibujar aliens//
-function drawAliens() {
+function drawAliens(num1, num2, num3, num4) {
 
   //hilera 1
-  for (let x1 = 0; x1 <= cantAliens; x1 += 0.7) {
-    posFilas1[x1] = [];
-    for (let y1 = 0; y1 <= cantAliens; y1+= 0.7) {
-      posFilas1[x1][y1] = image(alien1, [x1]+30, [y1]) ;
+Xfila1 =25;
+Yfila1 =100;
+  for (let x1 = 0; x1 < cantAliens; x1++) {
+    aliensPos1[x1] = [];
+    for(let y1 = 0; y1 < cantAliens; y1++){
+      aliensPos1[x1][y1] = (Xfila1,Yfila1);
+    
     }
-  }
-
-  //posXfila1[] = Xfila1;
-  //posYfila1[] =  Yfila1;
-  //    image(alien1, Xfila1*x1+70, Yfila1);
-
-  //hilera 2
-  for (x2 = 0; x2 <= cantAliens; x2 += 0.7) {
-    image(alien2, Xfila2*x2+70, Yfila2);
-    //posXfila2[] = Xfila2;
-    //  posYfila2[] = Yfila2 ;
-  }
-  //hilera 3
-  for (x3 = 0; x3 <=cantAliens; x3 += 0.7) {
-    image(alien3, Xfila3*x3+70, Yfila3);
-    //posXfila3[] = Xfila3 ;
-    //posYfila3[] = Yfila3;
-  }
-  //hilera 4
-  for (x4 = 0; x4 <=cantAliens; x4 += 0.7) {
-    image(alien3, Xfila4*x4+70, Yfila4);
-    //posXfila4[] = Xfila4 ;
-    //posYfila4[] = Yfila4 ;
   }
 }
 
-  // dibujar nave/jugador //
-  function drawNave() {
-   image(nave, naveX, naveY);
-  }
+//hilera 2
+if (aliensVida[num2] > 0) {
+  image(alien2, aliensPosX[num2], aliensPosY[num2]);
+}
+
+//hilera 3
+if (aliensVida[num3] > 0) {
+  image(alien3, aliensPosX[num3], aliensPosY[num3]);
+}
+
+//hilera 4
+if (aliensVida[num4] > 0) {
+  image(alien3, aliensPosX[num4], aliensPosY[num4]);
+}
+}
