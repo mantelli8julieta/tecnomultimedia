@@ -1,7 +1,7 @@
 // funciones del juego //
 
 //pantallas
-function fpantallas() {
+function fpantallas(pantalla) {
   if (pantalla == 0) {
     image(menu, 0, 0, 350, 350);
   }
@@ -23,14 +23,15 @@ function fpantallas() {
     drawAliens();
     drawNave();
     fbalaNave();
+  }
 
-    if (keyIsPressed) {
-      movimientoNave();
-    }
+  if (keyIsPressed == LEFT_ARROW || keyIsPressed == RIGHT_ARROW) {
+    movimientoNave();
   }
 }
 
-function interaccionPantallas(fpantallas) {
+function interaccionPantallas() {
+
   if (pantalla == 0) {
     //instrucciones
     if (mouseX > 96 && mouseX < 291 && mouseY > 257 && mouseY < 285) {
