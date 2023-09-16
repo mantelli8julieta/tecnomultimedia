@@ -18,8 +18,7 @@ vidasNave = 3;
 let balaX = naveX;
 let balaY = naveY;
 
-let aliensPos1 = [];
-let aliensPosY = [];
+let aliensPos1x = []; //las posiciones de los aliens en la fila 1
 let aliensVida = [];
 /* let aliensPos2 = [];
  let aliensPos3 = [];
@@ -64,55 +63,36 @@ function preload() {
 
 function setup() {
   createCanvas(350, 350);
+  pantalla = 0;
   background(0);
 
   for (let i1 = 0; i1 <= cantAliens; i1++) {
-    aliensPos1.push(25);
-    aliensPosY.push(100);
-    aliensVida.push(1);
+    aliensPos1x[i1] = (i1 * 25);
   }
 }
 
 function draw() {
   background(0);
-  pantalla = 0;
   print("pantalla actual es" + pantalla);
-  
+
   fpantallas(pantalla);
 
   if (pantalla == 3) {
-    for (let x1 = 25; x1 <= espaciadoAliensX; x1 += 25) {
-      for (let y1 = 100; y1 <= espaciadoAliensY; y1 += 25) {
-        image(alien1, [x1] + espaciadoAliensX, [y1] + espaciadoAliensY);
-      }
-    }
-    for (let x2 = 25; x2 <= espaciadoAliensX; x2 += 25) {
-      for (let y2 = 100; y2 <= espaciadoAliensY; y2 += 25) {
-        image(alien1, [x2] + espaciadoAliensX, [y2] + espaciadoAliensY);
-      }
-    }
-
-    for (let x3 = 25; x3 <= espaciadoAliensX; x3 += 25) {
-      for (let y3 = 100; y3 <= espaciadoAliensY; y3 += 25) {
-        image(alien1, [x3] + espaciadoAliensX, [y3] + espaciadoAliensY);
-      }
-    }
-    for (let x4 = 25; x4 <= espaciadoAliensX; x4 += 25) {
-      for (let y4 = 100; y4 <= espaciadoAliensY; y4 += 25) {
-        image(alien1, [x4] + espaciadoAliensX, [y4] + espaciadoAliensY);
-      }
-    }
-
     drawNave();
     movimientoNave();
     fBalaNave();
     disparoNave();
     balaAliens();
     disparoAliens();
+    
+    for (let i1 = 0; i1 <=cantAliens; i1++) {
+      aliensPos1x[i1]++;
+      
+    }
   }
+}
 
 
-  function mousePressed() {
-    interaccionPantallas(mouseX, mouseY);
-  }
+function mouseClicked() {
+  interaccionPantallas(mouseX, mouseY);
 }
