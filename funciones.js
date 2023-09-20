@@ -1,7 +1,8 @@
-//las pantallas del menu
-function fpantallas(pantalla) {
+//esta pestaña es para las pantallas, no pude cambiar el nombre...
+function fpantallas() {
   if (pantalla == 0) {
     image(menu, 0, 0, 350, 350);
+    fill(255);
   }
 
   if (pantalla == 1) {
@@ -17,20 +18,20 @@ function interaccionPantallas() {
 
   if (pantalla == 0) {
     //instrucciones
-    if (mouseX > 96 && mouseX < 291 && mouseY > 257 && mouseY < 285) {
+    if (mouseX > 88 && mouseX < 258 && mouseY > 236 && mouseY < 255) {
       pantalla = 1;
     }
     //creditos
-    if (mouseX > 128 && mouseX < 256 && mouseY > 301 && mouseY < 323) {
+    if (mouseX > 117 && mouseX < 227 && mouseY > 272 && mouseY < 289) {
       pantalla = 2;
     }
     //jugar
-    if (mouseX > 138 && mouseX < 250 && mouseY > 195 && mouseY < 226) {
+    if (mouseX > 129 && mouseX < 216 && mouseY > 178 && mouseY < 205) {
       pantalla = 3;
     }
-  } else if (pantalla != 0) {
-    //volver a menú
-    if (mouseX > 148 && mouseX < 238 && mouseY > 342 && mouseY < 370) {
+  } else if (pantalla == 1 || pantalla == 2) {
+    //volver al menú
+    if (mouseX > 134 && mouseX < 210 && mouseY > 307 && mouseY < 328) {
       pantalla = 0;
     }
   }

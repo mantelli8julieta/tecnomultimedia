@@ -18,35 +18,27 @@ vidasNave = 3;
 let balaX = naveX;
 let balaY = naveY;
 
-let aliensPos1x = []; //las posiciones de los aliens en la fila 1
-let aliensVida = [];
+let aliensPosX = []; //las posiciones en x de los aliens de la fila 1
+let aliensPosY = []; //las posiciones en y de los aliens de la fila 1
+let alienVivo = true;
 /* let aliensPos2 = [];
  let aliensPos3 = [];
  let aliensPos4 = [];
  let aliensVida = []; */
-
-let espaciadoAliensX = 10;
-let espaciadoAliensY = 25;
+let puntaje = 0;
+let cantFilas = 4;
 let cantAliens = 8; //cantidad de aliens x fila
+let aliensPosXInicio;
 
 let Xfila1, Yfila1, Xfila2, Yfila2, Xfila3, Yfila3, Xfila4, Yfila4;
 
-Xfila2 =25;
-Yfila2 =125;
-
-Xfila3 =25;
-Yfila3 =150;
-
-Xfila4 =25;
-Yfila4 =175;
-
 //flags//
 let recarga = true;
-let alienVivo = true;
 
 let fuente;
 
 function preload() {
+  //imágenes y fuente
   fuente =  loadFont('data/dogica.otf');
   alien1 = loadImage('data/alien1.png');
   alien2 = loadImage('data/alien2.png');
@@ -66,10 +58,17 @@ function setup() {
   pantalla = 0;
   background(0);
 
-  for (let i1 = 0; i1 <= cantAliens; i1++) {
-    aliensPos1x[i1] = (i1 * 25);
+  for (let j = 0; j < cantAliens; j++) {
+    aliensPosX[j] = [];
+    aliensPosY[j] = [];
+    aliensPosXInicio = 25;
+    for (let k = 0; k < cantFilas; k++) {
+      aliensPosX[j][k] = (j * 25) + aliensPosXInicio;
+      aliensPosY[j][k] = (k * 25) + 100;
+    }
   }
 }
+
 
 function draw() {
   background(0);
@@ -78,21 +77,12 @@ function draw() {
   fpantallas(pantalla);
 
   if (pantalla == 3) {
-    drawNave();
-    movimientoNave();
-    fBalaNave();
-    disparoNave();
-    balaAliens();
-    disparoAliens();
-    
-    for (let i1 = 0; i1 <=cantAliens; i1++) {
-      aliensPos1x[i1]++;
-      
-    }
+    juego();
   }
 }
 
-
 function mouseClicked() {
   interaccionPantallas(mouseX, mouseY);
+  print("mouseX es " + mouseX);
+  print("mouseY es " + mouseY);
 }
